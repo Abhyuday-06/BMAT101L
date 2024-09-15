@@ -50,6 +50,6 @@ for r1 = 1:1:(r-1)
         plot3(double(ptx(r1)), double(pty(r1)), double(T3),'m*', 'markersize', 30);
     end
 end
-end
+hold off;
 
     
