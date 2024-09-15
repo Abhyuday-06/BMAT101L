@@ -1,3 +1,4 @@
+% Initialization:
 clc
 clear all
 format compact % removes blank space from the output
