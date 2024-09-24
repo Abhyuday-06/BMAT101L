@@ -29,7 +29,7 @@ epx=3 % for creating the domain x
 epy=3 % for creating the domain y
 figure (1)
 for i = 1:length(T)
-D=[ax(i)-epx ax(i)+epx ay(i)-epy ay(i)+epy] 
+D=[ax(i)-epx ax(i)+epx ay(i)-epy ay(i)+epy] % domain
 fprintf('The critical point (x,y) is (%1.3f,%1.3f).',ax(i),ay(i)) 
 fprintf('The value of the function is %1.3f\n',T(i)) 
 ezcontour(f,D) 
