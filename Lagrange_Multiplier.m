@@ -13,7 +13,7 @@ ay=double(ay)
 %% Collecting critical points
 r=1; 
 for k=1:1:size(ax) 
-if((imag(ax(k))==0)&&(imag(ay(k))==0))    
+if((imag(ax(k))==0)&&(imag(ay(k))==0)) % Neglect imaginary solutions   
     ptx(r)=ax(k); 
     pty(r)=ay(k); 
       r=r+1; 
@@ -25,8 +25,8 @@ ax=ptx
 ay=pty
 T = subs(f,{x,y},{ax,ay})
 T=double(T)
-epx=3 
-epy=3 
+epx=3 % for creating the domain x
+epy=3 % for creating the domain y
 figure (1)
 for i = 1:length(T)
 D=[ax(i)-epxax(i)+epx ay(i)-epy ay(i)+epy] 
@@ -36,10 +36,9 @@ ezcontour(f,D)
 holdon 
 h = ezplot(g,D); 
 set(h,'Color',[1,0.7,0.9]) 
-plot(ax(i),ay(i),'k.','markersize',15+2*i) 
+plot(ax(i),ay(i),'k.','markersize',15+2*i)    
 end
 
 % Finding the Maximum and minimum at those points
 f_min=min(T)
 f_max=max(T) 
-
