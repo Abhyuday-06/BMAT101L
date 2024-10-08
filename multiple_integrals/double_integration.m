@@ -17,10 +17,14 @@ vol = int(int(x^2 + y^2, x, y/2, sqrt(y)), y, 0, 4)
 viewSolidone(z, 0+0*x*y, x^2 + y^2, x, y/2, sqrt(y), y, 0, 4);
 grid on;
 
-% Visualising the volume using cyiindrical coordinates %
+% Visualising the volume bounded by z= 0 and paraboloid z 1-x^2-y^2 using polar coordinates %
 
 clc
 clear all
 syms r theta
-vol = int(int(1-r^2)*r, r, 0,1), theta, 0, 2*pi)
-fsurf(r*cos(theta), r*sin(theta 0                      
+vol = int(int((1-r^2)*r, r, 0,1), theta, 0, 2*pi)
+fsurf(r*cos(theta), r*sin(theta), 1-r^2, [0 1 0 2*pi], 'MeshDensity', 20)
+axis equal;
+axis([-2 2 -2 2 - 1.3])
+xticks(-2:2); yticks(-2:2); zticks(0:1.3);
+xlabel('x'); ylabel('y')
