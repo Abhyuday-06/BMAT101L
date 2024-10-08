@@ -10,5 +10,5 @@ clc
 clear all
 syms x y z
 vol = int(int(x^2 + y^2, x, y/2, sqrt(y)), y, 0, 4)
-viewSolidone(z, 0+0*x*y, x^2+y^2, x^2 + y^2, x, y/2, sqrt(y), y, 0, 4);
+viewSolidone(z, 0+0*x*y, x^2 + y^2, x, y/2, sqrt(y), y, 0, 4);
 grid on;
