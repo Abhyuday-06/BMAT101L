@@ -61,3 +61,25 @@ xlabel('x')
 ylabel('y')
 hold on
 ezcontour(f, [-2 2])
+
+% F(x,y,z) =  x^2*y*z i + x*y^2*z j + z*y*z^2 k
+
+clc 
+clear all
+syms x y z real
+F = input("Enter the vector as i, j and k order in the vector form, eg- [x y z]:")
+curl_F = curl(F, [x y z])
+div_F = divergence(F, [x y z])
+
+% Determine whether or not the vector field F(x,y,z) = y^2*z^3 i + 2*x*y*z^3 j + 3*x*y^2*z^2 k is conservative. If it is, find a function f such that F = ulta_delta(f)
+
+clc 
+clear all
+syms x y z real
+F = input("Enter the vector as i, j and k order in the vector form, eg- [x y z]:") % f = [y^2*z^3  2*x*y*z^3  3*x*y^2*z^2]
+curl_F = curl(F, [x y z])
+if (curl_F == [0 0 0])
+  f = potential(F, [x y z])
+else
+  sprintf('curl_F is not equal to zero.')
+end
