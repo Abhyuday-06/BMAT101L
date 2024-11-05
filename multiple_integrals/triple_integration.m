@@ -13,7 +13,7 @@ axis equal; grid on;
 % A solid E lies within the cylinder x^2 + y^2 = 1 below the plane z = 4 and above the paraboloid z= 1 - (x^2 + y^2). The density at any point is proportional to its distance from the axis of the cylnder. Find the mass of E. 
 
 syms r z theta K
-Ma = int(int(int((K*r)*r, z, 1 -r^2, 4), r, 0, 1) theta, 0, 2*pi)
+Ma = int(int(int((K*r)*r, z, 1 -r^2, 4), r, 0, 1), theta, 0, 2*pi)
 
 x = r*cos(theta); y = r*sin(theta); s = sym(4);
 fsurf(x,y,1-r^2, [0 1 0 2*pi], 'g', 'EdgeColor', 'none');
