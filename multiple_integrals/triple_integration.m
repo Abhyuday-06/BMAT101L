@@ -16,7 +16,7 @@ syms r z theta K
 Ma = int(int(int((K*r)*r, z, 1 -r^2, 4), r, 0, 1) theta, 0, 2*pi)
 
 x = r*cos(theta); y = r*sin(theta); s = sym(4);
-fsurf(x,y,1-r^2, [0 1 0 2*pi], 'g', 'EdgeColor', 'none);
+fsurf(x,y,1-r^2, [0 1 0 2*pi], 'g', 'EdgeColor', 'none');
 hold on
 fsurf(1*cos(theta), 1*sin(theta), r, 'y', [0 4 0 2*pi], 'EdgeColor', 'none') % here we pass r = 1, in 1*cos or 1*sin
 fsurf(x,y,s, [0 1 0 2*pi], 'b', 'EdgeColor', 'none');
