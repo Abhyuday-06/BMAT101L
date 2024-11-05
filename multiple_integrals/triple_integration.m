@@ -33,3 +33,30 @@ hold on
 fsurf(x,y,r^2, [0 sqrt(5), 0 2*pi], 'y', 'EdgeColor', 'none');
 axis equal; xlabel('x'); ylabel('y'); zlabel('z');
 alpha 0.5
+
+% Draw a sphere of radius 5 with center at (0,0,0) 
+
+syms r z phi rho theta
+rho = 5
+x = rho*sin(phi)*cos(theta);
+y = rho*sin(phi)*sin(theta);
+z = rho*cos(phi);
+fsurf(x,y,z, [0 pi 0 2*pi], 'g', 'MeshDensity', 20);
+
+% Evaluate triple integration z dE where E is enclosed by the spheres x^2 + y^2 + z^2 = 1 and x^2 + y^2 + z^2 = 4 in the first octant 
+
+% sol - the function becomes rho*cos(phi)*rho^2*sin(phi) * d(rho) d(theta) d(phi) over the region rho = 1 to 2, theta from 0 to pi/2, phi from 0 to pi/2
+
+syms r phi rho theta
+Sol = int(int(int((rho*cos(phi))*(rho)^2*sin(phi), rho,1,2),phi, 0, pi/2), theta, 0, pi/2)
+rho = 1
+x = rho*sin(phi)*cos(theta);
+y = rho*sin(phi)*sin(theta);
+z = rho*cos(phi);
+fsurf(x,y,z, [0 pi/2 0 pi/2], 'g', 'MeshDensity', 20);
+hold on 
+rho = 2
+x = rho*sin(phi)*cos(theta);
+y = rho*sin(phi)*sin(theta);
+z = rho*cos(phi);
+fsurf(x,y,z, [0 pi/2 0 pi/2], 'b', 'MeshDensity', 20);
