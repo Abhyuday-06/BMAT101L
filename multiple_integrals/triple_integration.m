@@ -28,7 +28,7 @@ alpha 0.5
 
 syms r z theta
 x = r*cos(theta); y = r*sin(theta);
-fsurf(z,y,5-4^2, [0 sqrt(5) 0 2*pi], 'g', 'EdgeColor', 'none');
+fsurf(x,y,5-4^2, [0 sqrt(5) 0 2*pi], 'g', 'EdgeColor', 'none');
 hold on
 fsurf(x,y,r^2, [0 sqrt(5), 0 2*pi], 'y', 'EdgeColor', 'none');
 axis equal; xlabel('x'); ylabel('y'); zlabel('z');
