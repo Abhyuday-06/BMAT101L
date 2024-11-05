@@ -7,7 +7,7 @@ sol = int(int(int(6*x*z, y,0,x+z),x,0,z),z,0,1)
 
 syms x y z
 sol = int(int(int(6*x*y, z, 0, 1+x+y), y, 0, sqrt(x)), x, 0, 1)
-viewSolid(z, 0+0*x*y, 1 + x + y, 0 + 0*x, sqrt(x), x, 0,1); % here we pass z = 0 in 0*x*y
+viewSolid(z, 0+0*x*y, 1 + x + y, y, 0 + 0*x, sqrt(x), x, 0,1); % here we pass z = 0 in 0*x*y
 axis equal; grid on;
 
 % A solid E lies within the cylinder x^2 + y^2 = 1 below the plane z = 4 and above the paraboloid z= 1 - (x^2 + y^2). The density at any point is proportional to its distance from the axis of the cylnder. Find the mass of E. 
