@@ -84,7 +84,7 @@ else
   sprintf('curl_F is not equal to zero.')
 end
 
-% line integral 
+% line integral of F.dr
 
 clc
 clear all
