@@ -84,7 +84,7 @@ else
   sprintf('curl_F is not equal to zero.')
 end
 
-% line integral of F.dr
+% line integral of F.dr for 2 variables
 
 clc
 clear all
@@ -111,7 +111,34 @@ fplot(rbar(1), rbar(2), [lim(1), lim(2)])
 axis on
 xlabel('x'); ylabel('y')
 
+% line integral of F.dr for 3 variables(to be fixed)
 
+clc
+clear all
+close all
+syms x y z t
+f = input("Enter the f vector as i and j order in vector form:");
+rbar = input("Ebter the r vector as i and j order in vector form:");
+lim = input("Enter the limit of integration:");
+vecfi = input("Enter the vector field range:");
+drbar = diff(rbar, t);
+sub = subs(f, [x,y, z], rbar);
+f1 = dot(sub, drbar);
+int(f1, t, lim(1), lim(2))
+P = inline(vectorize(f(1)), 'x', 'y', 'z');
+Q = inline(vectorize(f(2)), 'x', 'y', 'z');
+R = inline(vectorize(f(3)), 'x', 'y', 'z');
+quiver3
+x = linspace(vecfi(1), vecfi(2),10);
+y = x;
+[X, Y] = meshgrid(x,y); 
+U = P(X,Y);
+V = Q(X,Y);
+quiver(X,Y, U,V)
+hold on 
+fplot(rbar(1), rbar(2), [lim(1), lim(2)])
+axis on
+xlabel('x'); ylabel('y')
 
 
 
